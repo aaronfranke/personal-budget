@@ -74,6 +74,11 @@ header h2 {
 	display: inline-block;
 }
 
+.text-box > h1 > a {
+	color: black;
+	text-decoration: none; /* no underline */
+}
+
 footer {
 	height: 78px;
 	background-color: #b4c6f0;
