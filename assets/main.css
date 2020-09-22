@@ -1,0 +1,133 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/* This is an A11y Change (removing the custom font size) */
+	font-family: Tahoma, Arial;
+	min-width: 220px;
+}
+
+nav {
+	width: 100%;
+	background-color: #4d5791;
+	height: 44px;
+	padding: 0 40px;
+}
+
+nav ul,
+nav ul li {
+	margin: 0;
+	padding: 0 ;
+	list-style: none;
+	display: inline-block;
+}
+
+nav ul li a {
+	display: block;
+	padding: 0 20px;
+	line-height: 44px;
+	font-size: 1em;
+	text-decoration: none;
+	color: #fff;
+	margin: 0;
+}
+
+nav ul li a:hover  {
+	background-color: white;
+	color: #4d5791;
+}
+
+header {
+	height: 350px;
+	background-color: #b4c6f0;
+	background-image: url("bg.png");
+	background-size: 400px;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	padding-top: 40px;
+}
+
+header h1,
+header h2 {
+	text-align: center;
+	margin: 0;
+}
+
+header h1 {
+	color: #fff;
+	font-size: 3em;
+	margin-bottom: 20px;
+}
+
+header h2 {
+	color: #4d5791;
+}
+
+.container {
+	padding: 40px 10px;
+	width: 100%;
+}
+
+.page-area {
+	max-width: 768px;
+	display: inline-block;
+}
+
+footer {
+	height: 78px;
+	background-color: #b4c6f0;
+	padding: 30px;
+}
+
+.center {
+	text-align: center;
+}
+
+.container div.text-box {
+	display: block;
+	float: left;
+	min-height: 200px;
+	max-width: 340px;
+	text-align: justify;
+	margin: 20px;
+}
+
+/* This is an A11y Change (for mobile devices) */
+@media (min-width: 800px) {
+}
+
+@media (max-width: 800px) {
+	.page-area {
+		max-width: 368px;
+	}
+	.container div.text-box {
+		min-height: 20px;
+	}
+}
+
+@media (max-width: 500px) {
+	header {
+		height: 500px;
+	}
+	header > h1, header > h2 {
+		display: block;
+		width: 220px;
+		margin: 20px auto;
+	}
+	.text-box {
+		text-align: center !important;
+	}
+	nav {
+		height: 90px;
+		padding: 0;
+	}
+	nav > ul {
+		display: block;
+		width: 176px;
+		margin: auto;
+	}
+	footer {
+		height: 96px;
+	}
+}
