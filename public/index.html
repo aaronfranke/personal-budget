@@ -98,9 +98,9 @@
 
 			<!-- This is an A11y Change (anchors on each text box to allow tabbing) -->
 			<div id="free2" class="text-box">
-				<h1><a href="#free2">Free</a></h1>
+				<h1><a href="#free2">Chart</a></h1>
 				<p>
-					This app is free!!! And you are the only one holding your data!
+					<canvas id="myChart" width="400" height="400"></canvas>
 				</p>
 			</div>
 
@@ -115,6 +115,47 @@
 		</div>
 	</footer>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"
+		integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg=="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+		integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg=="
+		crossorigin="anonymous"></script>
+	<script>
+		function createChart(dataSource) {
+			var context = document.getElementById("myChart").getContext("2d");
+			var myPieChart = new Chart(context, {
+				type: "pie",
+				data: dataSource
+			});
+		}
+
+		function getBudget() {
+			axios.get("/budget")
+				.then(function (res) {
+					// Empty template data structure.
+					var dataSource = {
+						datasets: [{
+							data: [],
+							backgroundColor: [
+								"#ffcd56",
+								"#ff6384",
+								"#36a2eb",
+								"#fd6b19"
+							]
+						}],
+						labels: []
+					};
+					// Populate the data structure with received values.
+					for (var i = 0; i < res.data.myBudget.length; i++) {
+						dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
+						dataSource.labels[i] = res.data.myBudget[i].title;
+					}
+					createChart(dataSource);
+				});
+		}
+		getBudget();
+	</script>
 </body>
 
 </html>
