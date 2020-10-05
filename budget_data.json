@@ -1,0 +1,36 @@
+{
+	"myBudget": [
+		{
+			"title": "Rent",
+			"budget": 620
+		},
+		{
+			"title": "Eat out",
+			"budget": 40
+		},
+		{
+			"title": "Grocery",
+			"budget": 150
+		},
+		{
+			"title": "Netflix",
+			"budget": 10
+		},
+		{
+			"title": "Amazon Prime",
+			"budget": 7
+		},
+		{
+			"title": "Reddit Premium",
+			"budget": 3
+		},
+		{
+			"title": "Video games",
+			"budget": 20
+		},
+		{
+			"title": "Electronics",
+			"budget": 50
+		}
+	]
+}
