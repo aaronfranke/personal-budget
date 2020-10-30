@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/aaronfranke/personal-budget#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.11"
   }
 }
