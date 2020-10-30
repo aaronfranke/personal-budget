@@ -30,83 +30,83 @@
 	</header>
 
 	<!-- This is a Semantic HTML Change -->
-	<section class="container center">
+	<main class="container center" id="main">
 		<div class="page-area">
 			<!-- This is an A11y Change (anchors on each text box to allow tabbing) -->
-			<div id="stay-on-track" class="text-box">
+			<article id="stay-on-track" class="text-box">
 				<h1><a href="#stay-on-track">Stay on track</a></h1>
 				<p>
 					Do you know where you are spending your money? If you really stop to track it down,
 					you would get surprised! Proper budget management depends on real data... and this
 					app will help you with that!
 				</p>
-			</div>
+			</article>
 
 			<!-- This is an A11y Change (anchors on each text box to allow tabbing) -->
-			<div id="alerts" class="text-box">
+			<article id="alerts" class="text-box">
 				<h1><a href="#alerts">Alerts</a></h1>
 				<p>
 					What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
 				</p>
-			</div>
+			</article>
 
 			<!-- This is an A11y Change (anchors on each text box to allow tabbing) -->
-			<div id="results" class="text-box">
+			<article id="results" class="text-box">
 				<h1><a href="#results">Results</a></h1>
 				<p>
 					People who stick to a financial plan, budgeting every expense, get out of debt faster!
 					Also, they to live happier lives... since they expend without guilt or fear...
 					because they know it is all good and accounted for.
 				</p>
-			</div>
+			</article>
 
 			<!-- This is an A11y Change (anchors on each text box to allow tabbing) -->
-			<div id="free" class="text-box">
+			<article id="free" class="text-box">
 				<h1><a href="#free">Free</a></h1>
 				<p>
 					This app is free!!! And you are the only one holding your data!
 				</p>
-			</div>
+			</article>
 
 			<!-- This is an A11y Change (anchors on each text box to allow tabbing) -->
-			<div id="stay-on-track2" class="text-box">
+			<article id="stay-on-track2" class="text-box">
 				<h1><a href="#stay-on-track2">Stay on track</a></h1>
 				<p>
 					Do you know where you are spending your money? If you really stop to track it down,
 					you would get surprised! Proper budget management depends on real data... and this
 					app will help you with that!
 				</p>
-			</div>
+			</article>
 
 			<!-- This is an A11y Change (anchors on each text box to allow tabbing) -->
-			<div id="alerts2" class="text-box">
+			<article id="alerts2" class="text-box">
 				<h1><a href="#alerts2">Alerts</a></h1>
 				<p>
 					What if your clothing budget ended? You will get an alert. The goal is to never go over the budget.
 				</p>
-			</div>
+			</article>
 
 			<!-- This is an A11y Change (anchors on each text box to allow tabbing) -->
-			<div id="results2" class="text-box">
+			<article id="results2" class="text-box">
 				<h1><a href="#results2">Results</a></h1>
 				<p>
 					People who stick to a financial plan, budgeting every expense, get out of debt faster!
 					Also, they to live happier lives... since they expend without guilt or fear...
 					because they know it is all good and accounted for.
 				</p>
-			</div>
+			</article>
 
 			<!-- This is an A11y Change (anchors on each text box to allow tabbing) -->
-			<div id="free2" class="text-box">
+			<article id="free2" class="text-box">
 				<h1><a href="#free2">Chart</a></h1>
 				<p>
 					<canvas id="myChart" width="400" height="400"></canvas>
 				</p>
-			</div>
+			</article>
 
 		</div>
 
-	</section>
+	</main>
 
 	<!-- This is a Semantic HTML Change -->
 	<footer>
@@ -131,7 +131,7 @@
 		}
 
 		function getBudget() {
-			axios.get("/budget")
+			axios.get("http://localhost:3000/budget")
 				.then(function (res) {
 					// Empty template data structure.
 					var dataSource = {
