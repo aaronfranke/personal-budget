@@ -1,7 +1,13 @@
+// Budget API
+
 const express = require("express");
 const app = express();
 const port = 3000;
-const fs = require("fs");
+
+// Mongo*
+let url = "mongodb://localhost:27017/budget"
+const mongoose = require("mongoose");
+const chartModel = require("./models/chart_schema");
 
 app.use("/", express.static("public"));
 
@@ -10,9 +16,22 @@ app.get("/hello", (req, res) => {
 });
 
 app.get("/budget", (req, res) => {
-	fs.readFile("./budget_data.json", function(err, data) {
-		res.json(JSON.parse(data));
-	});
+	mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
+		.then(() => {
+			console.log("Connected to the database.");
+			chartModel.find({})
+				.then((data) => {
+					console.log(data);
+					res.json(data);
+					mongoose.connection.close();
+				})
+				.catch((connectionError) => {
+					console.log(connectionError);
+				});
+		})
+		.catch((connectionError) => {
+			console.log(connectionError);
+		});
 });
 
 app.listen(port, () => {

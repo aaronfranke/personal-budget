@@ -137,23 +137,15 @@
 					var dataSource = {
 						datasets: [{
 							data: [],
-							backgroundColor: [
-								"#324cdd",
-								"#ff6384",
-								"#36a2eb",
-								"#ff0500",
-								"#ffcd56",
-								"#fd6b19",
-								"#83c57a",
-								"#96113a"
-							]
+							backgroundColor: []
 						}],
 						labels: []
 					};
 					// Populate the data structure with received values.
-					for (var i = 0; i < res.data.myBudget.length; i++) {
-						dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
-						dataSource.labels[i] = res.data.myBudget[i].title;
+					for (var i = 0; i < res.data.length; i++) {
+						dataSource.datasets[0].data[i] = res.data[i].budget;
+						dataSource.datasets[0].backgroundColor[i] = res.data[i].color;
+						dataSource.labels[i] = res.data[i].title;
 					}
 					createChart(dataSource);
 				});
