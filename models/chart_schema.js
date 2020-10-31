@@ -15,6 +15,9 @@ const chartSchema = new mongoose.Schema({
         required: true,
         trim: true,
         uppercase: true,
+        minlength: 6,
+        maxlength: 7,
+        match: /^#[A-Fa-f0-9]*$/,
     },
 }, { collection: "chart" });
 
